@@ -10,7 +10,7 @@ const eventRoutes=require("./routes/events");
 const adminRoutes=require("./routes/admin");
 const messageRoutes = require("./routes/messages");
 const advertisementRoutes = require("./routes/advertisements");
-var cors = require('cors')
+// var cors = require('cors');
 
 
 const app = express();
@@ -56,19 +56,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use("/images", express.static(path.join("backend/images")));
 // app.use("/profileimgs", express.static(path.join("backend/profileimgs")));
 //
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-//   );
-//   next();
-// });
-app.use(cors())
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+  );
+  next();
+});
+// app.use(cors())
 
 app.use("/api/posts",postsRoutes);
 app.use("/api/user",userRoutes);

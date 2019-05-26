@@ -238,7 +238,7 @@ console.log("getiing event");
   const eventQuery = Event.findById(req.params.id).then(event => {
     if (event) {
       console.log("event found");
-      postes = event.eventPosts.sort({ '_id': -1 });
+      postes = event.eventPosts;
       res.status(200).json({
         eventmembers: event.eventfollowers,
         eventname: event.eventname,
