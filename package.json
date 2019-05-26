@@ -1,7 +1,6 @@
 {
   "name": "comsats_social_backend",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,5 +35,14 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsfandNadeem/FYP_backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AsfandNadeem/FYP_backend/issues"
+  },
+  "homepage": "https://github.com/AsfandNadeem/FYP_backend#readme",
+  "description": ""
 }
