@@ -370,7 +370,7 @@ router.put("/adduser/:id",checkAuth,(req,res,next) => {
   });
 });
 
-router.get("/:id",checkAuth, (req, res, next) => {
+router.get("/:id", (req, res, next) => {
   // const pageSize = +req.query.pagesize;// like query parmaetres /?abc=1$xyz=2 , + is for converting to numbers
   // const currentPage = +req.query.page;
 console.log("getiing group");
