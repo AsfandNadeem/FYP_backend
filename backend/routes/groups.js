@@ -370,13 +370,13 @@ router.put("/adduser/:id",checkAuth,(req,res,next) => {
   });
 });
 
-router.get("/groups/:id",checkAuth, (req, res, next) => {
+router.get("/:id",checkAuth, (req, res, next) => {
   // const pageSize = +req.query.pagesize;// like query parmaetres /?abc=1$xyz=2 , + is for converting to numbers
   // const currentPage = +req.query.page;
 console.log("getiing group");
   const groupQuery = Group.findById(req.params.id).then(group => {
     if (group) {
-      // if(group.groupmembersid.includes(req.userData.userId)) {
+      if(group.groupmembersid.includes(req.userData.userId)) {
         console.log("group found");
         postes = group.groupPosts.sort({ '_id': -1 });
         res.status(200).json({
@@ -389,10 +389,10 @@ console.log("getiing group");
           posts: postes.reverse()
         });
         console.log(group.groupPosts);
-      // }
-      // else {
-      //   res.status(404).json({ message: "Group not followed!" });
-      // }
+      }
+      else {
+        res.status(404).json({ message: "Group not followed!" });
+      }
     } else {
       res.status(404).json({ message: "Group not found!" });
     }
