@@ -31,7 +31,7 @@
     "randomstring": "^1.1.5",
     "regex": "^0.1.1",
     "rxjs": "^6.5.2",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
